@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat App</title>
+        <link rel="icon" type="image/x-icon" href="../public/chat.png" />
+        <link href="style.css" rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+            integrity="sha512-Xm9qbB6Pu06k3PUwPj785dyTl6oHxgsv9nHp7ej7nCpAqGZT3OZpsELuCYX05DdonFpTlBpXMOxjavIAIUwr0w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script defer src="app.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <aside class="sideBar">
+                <form class="form-create">
+                    <input
+                        type="text"
+                        id="name"
+                        maxlength="11"
+                        placeholder="Your name"
+                        size="5"
+                        pattern="[A-Za-z_\-]*"
+                        required
+                    />
+                    <input
+                        type="text"
+                        id="room"
+                        placeholder="Chat room"
+                        size="5"
+                        pattern="[A-Za-z0-9_\-.\s]*"
+                        title="Only letters, numbers, forward slash, underscore, and dot are allowed."
+                        required
+                    />
+                    <button id="join" type="submit">New room</button>
+                </form>
+                <p><em>Active Rooms:</em></p>
+                <div class="room-list"></div>
+            </aside>
+
+            <div class="chat">
+                <ul class="chat-display"></ul>
+                <p class="activity"></p>
+
+                <form class="form-msg">
+                    <input
+                        type="text"
+                        id="message"
+                        placeholder="Your message"
+                        required
+                    />
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="user-list"></div>
+        </main>
+    </body>
+</html>
