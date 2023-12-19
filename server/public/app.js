@@ -1,4 +1,5 @@
-const socket = io("ws://localhost:3500");
+// const socket = io("ws://localhost:3500");
+const socket = io("https://group-chat-socket-io.onrender.com");
 
 const msgInput = document.querySelector("#message");
 const nameInput = document.querySelector("#name");
